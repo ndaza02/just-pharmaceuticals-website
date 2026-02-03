@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale Catalog | Spira Life</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .tab-active {
+            background-color: #1A201C;
+            color: white;
+        }
+
+        .tab-inactive {
+            background-color: transparent;
+            color: #4A4A4A;
+        }
+    </style>
+</head>
+
+<body class="bg-spira-offWhite text-spira-black font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="max-w-[1440px] mx-auto px-6 md:px-12 py-8 flex items-center justify-between">
+        <div class="flex items-center gap-2 font-bold text-xl tracking-tighter cursor-pointer"
+            onclick="window.location.href='index.html'">
+            <div class="w-8 h-8 bg-spira-green rounded-full flex items-center justify-center text-white">
+                <i data-lucide="leaf" class="w-5 h-5"></i>
+            </div>
+            <span>SPIRA LIFE</span>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-12 text-sm font-medium text-spira-darkGray">
+            <a href="index.html" class="hover:text-spira-black transition">Home</a>
+            <a href="shop.html" class="text-spira-black font-bold transition">Wholesale Catalog</a>
+            <a href="#" class="hover:text-spira-black transition">Logistics</a>
+            <a href="#" class="hover:text-spira-black transition">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-6">
+            <button class="relative p-2">
+                <i data-lucide="shopping-bag" class="w-6 h-6 text-spira-black"></i>
+                <div
+                    class="absolute top-0 right-0 w-4 h-4 bg-spira-green rounded-full text-[10px] font-bold text-white flex items-center justify-center">
+                    0</div>
+            </button>
+            <button class="p-2 lg:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-[1440px] mx-auto px-6 md:px-12 pb-20">
+
+        <!-- Shop Header -->
+        <header class="text-center mb-16 pt-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-8">Wholesale Catalog</h1>
+            <p class="text-xl text-spira-darkGray max-w-2xl mx-auto mb-12">
+                Browse our comprehensive inventory for pharmacies, hospitals, and clinics.
+                <span class="block text-sm mt-2 text-spira-green font-bold uppercase tracking-widest">Login required for
+                    pricing</span>
+            </p>
+
+            <!-- Tabs -->
+            <div class="inline-flex bg-gray-200 rounded-full p-1.5 shadow-inner">
+                <button id="btn-pharma"
+                    class="px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider transition-all tab-active"
+                    onclick="switchTab('pharma')">
+                    Pharmaceuticals
+                </button>
+                <button id="btn-galenical"
+                    class="px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider transition-all tab-inactive"
+                    onclick="switchTab('galenical')">
+                    Galenicals
+                </button>
+                <button id="btn-sundries"
+                    class="px-8 py-3 rounded-full font-bold text-sm uppercase tracking-wider transition-all tab-inactive"
+                    onclick="switchTab('sundries')">
+                    Sundries
+                </button>
+            </div>
+        </header>
+
+        <!-- Pharmaceuticals Section -->
+        <section id="section-pharma" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product 1: Paracetamol -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div class="h-64 bg-red-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="pill" class="w-16 h-16 text-red-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-red-600 block">Generic</span>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 bg-red-100 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-red-700">
+                        Bulk Tin</div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Paracetamol 500mg</h3>
+                <p class="text-sm text-gray-400 mb-4">Analgesic · Tin of 1000 Tabs</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$12.00</span>
+                    <button onclick="cart.addItem({id: 'ph-001', name: 'Paracetamol 500mg (1000s)', price: 12.00})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2: Amoxicillin -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div class="h-64 bg-red-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="pill" class="w-16 h-16 text-red-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-red-600 block">Generic</span>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 bg-red-100 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-red-700">
+                        POM</div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Amoxicillin 500mg</h3>
+                <p class="text-sm text-gray-400 mb-4">Antibiotic · Tin of 500 Caps</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$18.50</span>
+                    <button onclick="cart.addItem({id: 'ph-002', name: 'Amoxicillin 500mg (500s)', price: 18.50})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3: Ibuprofen -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div class="h-64 bg-red-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="pill" class="w-16 h-16 text-red-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-red-600 block">Generic</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Ibuprofen 400mg</h3>
+                <p class="text-sm text-gray-400 mb-4">Anti-inflammatory · Tin of 1000</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$15.00</span>
+                    <button onclick="cart.addItem({id: 'ph-003', name: 'Ibuprofen 400mg (1000s)', price: 15.00})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4: Metformin -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div class="h-64 bg-red-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="pill" class="w-16 h-16 text-red-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-red-600 block">Generic</span>
+                    </div>
+                    <div
+                        class="absolute top-4 right-4 bg-red-100 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-red-700">
+                        POM</div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Metformin 500mg</h3>
+                <p class="text-sm text-gray-400 mb-4">Diabetic Care · Box of 1000</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$9.50</span>
+                    <button onclick="cart.addItem({id: 'ph-004', name: 'Metformin 500mg (1000s)', price: 9.50})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galenicals Section (Hidden by Default) -->
+        <section id="section-galenical" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product 1: Cough Mix Base -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div
+                    class="h-64 bg-amber-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="flask-conical" class="w-16 h-16 text-amber-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-amber-600 block">Base</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Cough Mixture Base</h3>
+                <p class="text-sm text-gray-400 mb-4">Expectorant Base · 5 Litres</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$25.00</span>
+                    <button onclick="cart.addItem({id: 'gl-001', name: 'Cough Mix Base (5L)', price: 25.00})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2: Calamine -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div class="h-64 bg-pink-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="droplets" class="w-16 h-16 text-pink-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-pink-600 block">Lotus</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Calamine Lotion BP</h3>
+                <p class="text-sm text-gray-400 mb-4">Bulk Suspension · 2 Litres</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$18.00</span>
+                    <button onclick="cart.addItem({id: 'gl-002', name: 'Calamine Lotion (2L)', price: 18.00})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3: Methyl Salicylate -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div
+                    class="h-64 bg-green-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="flask-round" class="w-16 h-16 text-green-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-green-600 block">Pure</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Methyl Salicylate</h3>
+                <p class="text-sm text-gray-400 mb-4">Raw Material · 500ml</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$14.00</span>
+                    <button onclick="cart.addItem({id: 'gl-003', name: 'Methyl Salicylate (500ml)', price: 14.00})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sundries Section (Hidden by Default) -->
+        <section id="section-sundries" class="hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product 1: Surgical Spirit -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div class="h-64 bg-blue-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="droplet" class="w-16 h-16 text-blue-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-blue-600 block">Spirit</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Surgical Spirit</h3>
+                <p class="text-sm text-gray-400 mb-4">70% Alcohol · 20 Litres</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$45.00</span>
+                    <button onclick="cart.addItem({id: 'sd-001', name: 'Surgical Spirit (20L)', price: 45.00})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2: Latex Gloves -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div
+                    class="h-64 bg-purple-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="hand" class="w-16 h-16 text-purple-500 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-purple-600 block">Gloves</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Latex Exam Gloves</h3>
+                <p class="text-sm text-gray-400 mb-4">Medium · Box of 100 Pairs</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$6.50</span>
+                    <button onclick="cart.addItem({id: 'sd-002', name: 'Latex Gloves Med (100s)', price: 6.50})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3: Cotton Wool -->
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm hover:shadow-lg transition-all group relative">
+                <div class="h-64 bg-gray-50 rounded-3xl mb-6 relative overflow-hidden flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-lucide="cloud" class="w-16 h-16 text-gray-400 mx-auto mb-2"></i>
+                        <span class="font-black text-2xl text-gray-500 block">Cotton</span>
+                    </div>
+                </div>
+                <h3 class="font-bold text-lg mb-1">Cotton Wool</h3>
+                <p class="text-sm text-gray-400 mb-4">Absorbent · 500g Roll</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold">$3.50</span>
+                    <button onclick="cart.addItem({id: 'sd-003', name: 'Cotton Wool (500g)', price: 3.50})"
+                        class="w-10 h-10 bg-spira-black text-white rounded-full flex items-center justify-center hover:bg-spira-green transition-colors hover:scale-110 transform duration-200">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-[1440px] mx-auto px-6 md:px-12 py-12 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
+            <div class="flex items-center gap-2 font-bold text-spira-black">
+                <div class="w-6 h-6 bg-spira-green rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="leaf" class="w-3 h-3"></i>
+                </div>
+                <span>SPIRA LIFE</span>
+            </div>
+
+            <div class="flex gap-6">
+                <span>Nationwide Delivery</span>
+                <span>Harare • Bulawayo • Gweru • Mutare</span>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-spira-black transiton">Privacy</a>
+                <a href="#" class="hover:text-spira-black transiton">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+        // Tab Switcher Logic
+        function switchTab(tab) {
+            const tabs = ['pharma', 'galenical', 'sundries'];
+
+            tabs.forEach(t => {
+                const btn = document.getElementById(`btn-${t}`);
+                const section = document.getElementById(`section-${t}`);
+
+                if (t === tab) {
+                    btn.classList.add('tab-active');
+                    btn.classList.remove('tab-inactive');
+                    section.classList.remove('hidden');
+                    section.classList.add('grid');
+                } else {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('tab-inactive');
+                    section.classList.add('hidden');
+                    section.classList.remove('grid');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
