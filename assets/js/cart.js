@@ -1,6 +1,6 @@
 class ShopCart {
     constructor() {
-        this.items = JSON.parse(localStorage.getItem('spira_cart')) || [];
+        this.items = JSON.parse(localStorage.getItem('just_pharma_cart')) || [];
         this.total = 0;
         this.init();
     }
@@ -41,7 +41,7 @@ class ShopCart {
     }
 
     save() {
-        localStorage.setItem('spira_cart', JSON.stringify(this.items));
+        localStorage.setItem('just_pharma_cart', JSON.stringify(this.items));
         this.updateTotal();
     }
 
