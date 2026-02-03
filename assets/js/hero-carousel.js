@@ -6,24 +6,24 @@
 const heroSlides = [
     {
         pillImage: "https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&q=60&w=600",
-        mainImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=1000", // Bulk Pharma / Warehouse
-        titles: ["Your", "Strategic", "Partner."],
-        text: "Your strategic partner in pharmaceutical distribution. Supplying institutions with quality medicines, galenicals, and surgicals.",
-        alt: "Pharmaceutical warehouse distribution center"
+        mainImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=1000",
+        titles: ["Just", "Strategic.", "Supply."],
+        text: "Just Pharmaceuticals is your strategic partner in wholesale distribution. Supplying institutions with quality medicines and galenicals.",
+        alt: "Just Pharmaceuticals Distribution Center"
     },
     {
-        pillImage: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=60&w=600", // Lab / Manufacturing
+        pillImage: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=60&w=600",
         mainImage: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=1000",
-        titles: ["Bulk", "Galenical", "Supply."],
-        text: "Raw materials and compounding bases for pharmacies and manufacturers. GMP certified quality.",
-        alt: "Laboratory manufacturing environment"
+        titles: ["Just", "Quality", "Galenicals."],
+        text: "Pure raw materials and compounding bases. Just Pharmaceuticals ensures GMP-certified standards for every batch.",
+        alt: "Just Pharmaceuticals Laboratory"
     },
     {
-        pillImage: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=60&w=600", // Surgical/Medical
+        pillImage: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=60&w=600",
         mainImage: "https://images.unsplash.com/photo-1583912267670-6575cb941e7d?auto=format&fit=crop&q=80&w=1000",
-        titles: ["Medical", "& Surgical", "Sundries."],
-        text: "Complete range of hospital consumables, from surgical spirits to latex gloves and disposables.",
-        alt: "Medical surgical equipment supplies"
+        titles: ["Just", "The Complete", "Range."],
+        text: "From surgical spirits to latex gloves. Just Pharmaceuticals provides a full spectrum of medical and surgical sundries.",
+        alt: "Just Pharmaceuticals Medical Supplies"
     }
 ];
 
