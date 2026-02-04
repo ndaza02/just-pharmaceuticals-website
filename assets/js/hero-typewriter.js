@@ -35,5 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    startEffect();
+    // Start the effect after a 0.3s delay
+    setTimeout(startEffect, 300);
 });
