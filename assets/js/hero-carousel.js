@@ -5,22 +5,22 @@
 
 const heroSlides = [
     {
-        pillImage: "https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&q=60&w=600",
-        mainImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=80&w=1000",
+        pillImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&q=60&w=600",
+        mainImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000",
         titles: ["Just", "Strategic.", "Supply."],
         text: "Just Pharmaceuticals is your strategic partner in wholesale distribution. Supplying institutions with quality medicines and galenicals.",
         alt: "Just Pharmaceuticals Distribution Center"
     },
     {
-        pillImage: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=60&w=600",
-        mainImage: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=1000",
+        pillImage: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=60&w=600",
+        mainImage: "https://images.unsplash.com/photo-1579154236599-c0a861274534?auto=format&fit=crop&q=80&w=2000",
         titles: ["Just", "Quality", "Galenicals."],
         text: "Pure raw materials and compounding bases. Just Pharmaceuticals ensures GMP-certified standards for every batch.",
         alt: "Just Pharmaceuticals Laboratory"
     },
     {
         pillImage: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=60&w=600",
-        mainImage: "https://images.unsplash.com/photo-1583912267670-6575cb941e7d?auto=format&fit=crop&q=80&w=1000",
+        mainImage: "https://images.unsplash.com/photo-1583912267670-6575cb941e7d?auto=format&fit=crop&q=80&w=2000",
         titles: ["Just", "The Complete", "Range."],
         text: "From surgical spirits to latex gloves. Just Pharmaceuticals provides a full spectrum of medical and surgical sundries.",
         alt: "Just Pharmaceuticals Medical Supplies"
