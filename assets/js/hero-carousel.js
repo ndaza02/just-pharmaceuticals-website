@@ -68,19 +68,25 @@ class HeroCarousel {
         if (this.isAnimating) return;
         this.isAnimating = true;
 
-        // 1. Erase Phase
-        await this.eraseAll();
+        try {
+            console.log(`Hero Carousel: Transitioning from slide ${this.currentIndex} to ${this.nextIndex}`);
 
-        // 2. Image Swap Phase (Fade)
-        this.changeImages();
+            // 1. Erase Phase
+            await this.eraseAll();
 
-        // 3. Type Phase
-        this.currentIndex = this.nextIndex;
-        this.nextIndex = (this.currentIndex + 1) % this.slides.length;
+            // 2. Image Swap Phase (Fade)
+            this.changeImages();
 
-        await this.typeAll();
+            // 3. Type Phase
+            this.currentIndex = this.nextIndex;
+            this.nextIndex = (this.currentIndex + 1) % this.slides.length;
 
-        this.isAnimating = false;
+            await this.typeAll();
+        } catch (error) {
+            console.error("Hero Carousel: Transition error", error);
+        } finally {
+            this.isAnimating = false;
+        }
     }
 
     changeImages() {
@@ -145,10 +151,11 @@ class HeroCarousel {
     }
 
     typeText(element, text, speed) {
+        if (!element) return Promise.resolve();
         return new Promise(resolve => {
             element.innerText = '';
             let i = 0;
-            function type() {
+            const type = () => {
                 if (i < text.length) {
                     element.innerHTML += text.charAt(i);
                     i++;
@@ -156,16 +163,18 @@ class HeroCarousel {
                 } else {
                     resolve();
                 }
-            }
+            };
             type();
         });
     }
 
     eraseText(element, speed) {
+        if (!element) return Promise.resolve();
         return new Promise(resolve => {
             const text = element.innerText;
+            if (!text) return resolve();
             let i = text.length;
-            function erase() {
+            const erase = () => {
                 if (i > 0) {
                     element.innerHTML = text.substring(0, i - 1);
                     i--;
@@ -173,7 +182,7 @@ class HeroCarousel {
                 } else {
                     resolve();
                 }
-            }
+            };
             erase();
         });
     }
