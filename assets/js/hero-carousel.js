@@ -92,12 +92,9 @@ class HeroCarousel {
     changeImages() {
         const nextSlide = this.slides[this.nextIndex];
 
-        // Fade Out
-        this.dom.pillImage.style.opacity = '0';
-        this.dom.pillImage.style.transform = 'scale(1.1)';
-
-        this.dom.mainImage.style.opacity = '0';
-        this.dom.mainImage.style.transform = 'scale(1.05)';
+        // Soft Fade Out
+        this.dom.pillImage.style.opacity = '0.3';
+        this.dom.mainImage.style.opacity = '0.3';
 
         setTimeout(() => {
             // Swap Sources
@@ -109,19 +106,13 @@ class HeroCarousel {
                 this.dom.mainImage.alt = nextSlide.alt;
             }
 
-            // Fade In (onload ensures no flicker)
-            const restoreOpacity = () => {
-                this.dom.pillImage.style.opacity = '1';
-                this.dom.pillImage.style.transform = 'scale(1)';
+            // Restore Opacity
+            this.dom.pillImage.style.opacity = '1';
+            this.dom.mainImage.style.opacity = '1';
+            this.dom.pillImage.style.transform = 'scale(1)';
+            this.dom.mainImage.style.transform = 'scale(1)';
 
-                this.dom.mainImage.style.opacity = '1';
-                this.dom.mainImage.style.transform = 'scale(1)';
-            };
-
-            // Simple wait for both, in prod we'd track load events individually but this is safe enough for recycled cache
-            setTimeout(restoreOpacity, 100);
-
-        }, 800); // Wait for fade out (increased to match CSS transition)
+        }, 500);
     }
 
     // --- Typewriter Logic ---
